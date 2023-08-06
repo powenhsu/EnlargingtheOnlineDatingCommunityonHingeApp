@@ -1,0 +1,914 @@
+---
+title: "Enlarging the Online Dating Community on Hinge App"
+author:  "Catherine Liu (xl3239), Ferlin Phee (pp2816), Hsu Po Wen (ph2660), Kanina Anindita (ka2834), Namira Suniaprita (ns3646)
+"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment="", warning = FALSE, message = FALSE, tidy.opts=list(width.cutoff=55), tidy = TRUE)
+```
+
+**Please refer to Appendix for responsibility percentages**
+
+### Executive Summary / Abstract
+
+To achieve brand awareness and maintain a strong presence, Hinge runs advertising campaigns regularly. As Hinge expands globally, there is still scope to increase penetration in the US market, especially among millennials. To increase downloads further, Hinge is considering a follow-up advertising campaign with their partner, Instagram. A refinement in the advertisement contents and placement is being considered to increase its effectiveness. The current video advertisement is 15 seconds long, in high-saturated color, and delivers a good sense of humor. While it hits the right spot in several ways, there is room to make it more effective. Possible refinements include the position of advertisement placement, format (video or static image), and the inclusion of more information, such as indicating a benefit in the advertisement. 
+
+Prior to full-scale implementation, A/B testing can be conducted on randomly picked Instagram users to measure the effectiveness of the proposed changes. The proportion of users within each sample who clicked on the advertisement will be measured. A two-sample proportion test will be used to assess whether the result is significant. Other variables collected in the study, such as the number of views, number of likes, number of shares, age group, and gender, can also be assessed via the same study to see if there are effects. 
+
+We conducted 1,000 simulations on two scenarios - with effect and without effect, to test the power of the experiment. Based on the results of the simulations, we propose to proceed with the experiment. Depending on the final results of the experiment, Hinge can revise the advertisement before conducting a full-fledged advertising campaign on Instagram. To push out the revised advertisement on other platforms and countries, further research will be required. 
+
+***
+
+## Part 1:  Research Proposal
+
+### Statement of the Problem
+
+The internet has changed the way we live, including how we meet people and date. This was accelerated by the introduction of online dating websites/apps, which made meeting new people so much easier, faster, and cheaper. It has brought down geographical borders and allows one to meet people across the globe. Joining an online dating community increases one’s chance of finding love. Hinge was created in 2012 in New York, USA, to help people do that. Targeted at millennials with an intent to go into long-term relationships, the brand’s promise is  **“Designed to be Deleted®.”.**
+
+The online dating market is growing. Based on reports by the Statista Research Department on [online dating](https://www.statista.com/outlook/dmo/eservices/dating-services/online-dating/united-states), as of April 2020, only 27% of adults in the United States have used a dating website or app. In 2021, there were 55.7 million online dating app users in the United States, the share of paying users is only about 14.7%, and the revenue generated from them is about 1.27 billion U.S. dollars. The market growth might have been hastened and amplified over the last couple of years due to COVID-19, but it is projected to continue growing.
+
+As Hinge expands globally, there is still much scope to increase penetration in the US market, especially among millennials (the target group). It was also reported by the Statista Research Department that in 2021: 72.19 million [millennials](https://www.statista.com/topics/2705/millennials-in-the-us/) (generally referred to those born in the 1980s to the mid-1990s) formed about 21% of the US population. Of the [millennials](https://www.statista.com/statistics/276689/leading-smartphone-activities-us-users-by-age-group/) who used their smartphone regularly, only 15% do so for online dating.
+
+Hinge is in third place in terms of market share and the number of downloads per month. There are plenty of [dating apps in the US market](https://www.statista.com/statistics/1238390/most-popular-dating-apps-us-by-number-of-downloads/), with Tinder and Bumble leading the pack. Like most online dating apps, Hinge offers free basic services, and members can pay to access more advanced or premium features. To keep up with the competition, Hinge maintains a differentiated platform (i.e., for intentional daters), and features were added over time, making better matches and helping people start meaningful conversations. The target this year is to achieve about $300 million in revenue, 50% more than in 2021 (Match group 2021 [annual report](https://s22.q4cdn.com/279430125/files/doc_financials/2020/ar/Match-Group-2021-Annual-Report-to-Stockholders_vF.pdf)).
+
+To achieve the target revenue, there is a need to attract more people to download and try Hinge before they can be enticed to be paid users. To achieve brand awareness and maintain a strong presence, advertising campaigns were often run. Red Antler was engaged for the [latest advertising campaign](https://redantler.com/work/case-study/hinge-campaign), which focused on Hinge brand promise. Advertisements were run in various mediums, and one key focus was digital advertisements, which were put out on Instagram, Snapchat, YouTube, and Hulu. As a result of the advertising campaign, there was a 45% increase in app downloads. 
+
+Hinge has a close working partnership with Instagram, as our user profiles are similar. According to the Statista Research Department, as of June 2022, [Instagram users](https://www.statista.com/statistics/398166/us-Instagram-user-age-distribution/) are predominantly in the age of 25-34, which is also Hinge’s primary target group. 
+
+Hinge is considering a follow-up advertising campaign on Instagram. **To increase Hinge downloads further, a refinement in the advertisement placement, format, and content is being considered.**
+
+***
+
+### Literature Review
+
+Millennials are our main target group. In a study on the types of digital marketing strategies preferred by millennials ([Smith, 2021](https://www.tandfonline.com/doi/full/10.1080/0965254X.2011.581383)), it was found that they did not like obtrusive advertisements. Still, they liked deals such as coupons, enjoyed watching advertisements on YouTube, and were attracted to brightly colored graphics. They also love to interact and are highly influenced by online reviews. Similarly, [Litchlé, 2007](https://doi.org/10.1080/02650487.2007.11072995) found that individuals with high optimal stimulation level (OSL) experience heightened pleasure from ads whose dominant color has a red hue and which is saturated. [Mattke, Maier, Reis, and Weitzel, 2021](https://doi.org/10.1108/EJM-03-2020-0210) also concluded that besides promoting the product, the advertisement should be seen as entertaining and credible. The selection of appropriate platforms to place the advertisement is also important. There is also a need to consider the amount of personalization that could lead to privacy concerns or irritation to the user.  Interestingly, [Goodrich et al., 2015](https://www.researchgate.net/publication/273673847_Consumer_Reactions_to_Intrusiveness_Of_Online-Video_Advertisements_Do_Length_Informativeness_and_Humor_Help_or_Hinder_Marketing_Outcomes) found that shorter advertisements were perceived as significantly more intrusive than longer advertisements. Longer advertisements could convey information and humor more successfully, significantly reducing intrusiveness. 
+
+The current video advertisement from Hinge is 15 seconds long and in high-saturated colors - orange, purple, and pink. It also delivered a good sense of humor by bringing a furry version of the Hinge app icon to life for the express purpose of dying every time a couple hits it off. For the campaign, “Hingie” met his demise in 18 different ways. Based on the various research findings, the original advertisement had hit the right spot in several ways - color, entertainment, and humor which made the length of the advertisement less obtrusive. However, there is room to make it more effective in the follow-up advertising campaign on Instagram.
+
+The factors of advertisement that can draw the attention of customers are always being debated. In a study conducted to explain clicking behavior ([Mattke, Maier, Reis, and Weitzel, 2021](https://doi.org/10.1108/EJM-03-2020-0210)), it was found that the location and colors of the advertisement could help to attract attention and maximize clicks on in-app ads. But in the research by [Sałabun, W., Karczmarczyk, A.,and Mejsner, P., 2017](https://doi-org.ezproxy.cul.columbia.edu/10.1007/978-3-319-62938-4_24), using eye-trackers for the experiment, it was found that there is no significant correlation between color contrast and the effectiveness of online advertising. Instead, where advertisements are placed on the screen matter more than color. These findings inspired us to consider the placement of advertisements on Instagram and find out whether there is a difference when it is placed as an Instagram story (at the top of the page) or as an Instagram post (at the middle of the page). 
+
+In terms of advertisement presentation on Instagram, it could be done in different formats, involving static image (photo) or audio-visual (video) content. Research on luxury brands showed that high media richness stimulates engagement and extracts more positive behavioral responses ([Kusumasondjaja, S., 2020](Exploring the role of visual aesthetics and presentation modality in luxury fashion brand communication on Instagram - ProQuest)). On the other hand, a study on a health app found that an image outperformed the video versions of the same advertisement in terms of click-throughs and app download（[Northcott et al., 2021](Should Facebook advertisements promoting a physical activity smartphone app be image or video-based, and should they promote benefits of being active or the app attributes? - Document - Gale Academic OneFile)). Given the lack of literature addressing this topic on dating apps and the results being mixed and conflicting, this study aims to study this aspect.
+
+The research by [Northcott et al., 2021](Should Facebook advertisements promoting a physical activity smartphone app be image or video-based, and should they promote benefits of being active or the app attributes? - Document - Gale Academic OneFile) also studied the impact of different advertising appeals for promoting a physical fitness smartphone app. The study compared an advertisement that promotes the benefits of being physically active (benefit appeal) versus an advertisement that showcases the app’s attributes and features (attribute appeal). The findings showed that the advertisement promoting the active benefits resulted in higher consumer engagement, measured by click-through rate and app downloads. Separately, [Alalwan, 2018](https://doi.org/10.1016/j.ijinfomgt.2018.06.001) found that a high level of interactivity (two-way communication) and informativeness (quality and amount of information) presented in social media ads would enhance the customer’s perception of usefulness. Customers would be more inclined to buy when they feel that the ads are related to their preferences and interests. Given the findings by Northcott et al., (2021) and Alalwan (2018), we would like to test the impact of sharing more information by stating a benefit appeal in the advertisement. 
+
+Research has shown that consumers’ advertisement clicking behavior is driven by their consumption or shopping motivation. Whether they believe that the advertisements are relevant or compatible with the social media content they are consuming or interested in ([Zhang and Mao, 2016](https://onlinelibrary.wiley.com/doi/10.1002/mar.20862)). These would facilitate positive responses such as intentions to purchase and spread positive word of mouth. In terms of our study, this could translate to clicking the advertisement, liking the post, or sharing it with their friends. 
+
+***
+
+### Research Questions, Hypotheses, and Effects
+
+Firstly, the current campaign used Instagram story placement–at the top of the page–where users have to click on a story before they can see the Hinge advertisement. The marketing department is keen to test whether placing the advertisement as an Instagram post at the middle of the page will be more upfront and attention-grabbing (i.e. by making the advertisement the centerpiece of the app) visually. 
+
+Aside from advertisement placement, the current Hinge advertisement video ends with the brand promise **“The dating app designed to be deleted”**. While the video might have been perceived as fleet and fun, viewers have to watch the entire 15-sec video advertisement to get to the message. Hence, the marketing department is considering changing the format into a static image, putting the focus on the message (i.e., the tagline for Hinge) itself to stimulate more engagement and improve the number of clicks on the advertisement.
+
+Finally, the current advertisement focuses on the brand promise and unique selling point of Hinge. While the previous campaign has increased downloads, the marketing department felt that it might have been seen as a fun advertisement and might not be convincing enough for some to download the app and try online dating. To enhance the proportion of users who click on the advertisement, the marketing department likes to consider adding more information, i.e. the benefit attribute which is “72% of dates on Hinge leads to a second date”, in the advertisement.
+
+Prior to making changes and launching a full-fledged advertising campaign which is costly, there is a need to assess the effectiveness of the proposal. Hence, the study aims to find the most appropriate advertising placement, format, and content. Below are the research questions and hypotheses of this study:
+
+1. Relative to the current advertisement placement in Instagram story, does shifting the advertisement to an Instagram post contribute to a higher proportion of users who click?
+2. Relative to the current video advertisement, does changing the format into a static image placed as an Instagram post improve the proportion of users who click?
+3. Relative to the current Hinge brand promise, does including the benefit **"72% of dates on Hinge lead to a second date.”**  in an Instagram post advertisement increase the proportion of users who click?
+
+
+#### Shifting the Advertisement Placement
+
+```{r, echo = FALSE}
+knitr::include_graphics("Hypothesis 1.png")
+```
+
+**Parameters to Compare: **
+
+Pc1 = The proportion of users who clicks the current video advertisement from Instagram story placement (top of page) 
+
+Pt1 = The proportion of users who clicks the current video advertisement from Instagram post placement (middle of page)
+
+**Null Hypothesis**
+
+H0:  Pt1  - Pc1 ≤ 0
+
+*The proportion of users who click on the advertisement from Instagram post is not greater than the proportion of users who click on the advertisement from Instagram story placement*
+
+**Alternative Hypothesis**
+
+H1: Pt1  - Pc1 > 0 
+
+*The proportion of users who click on the advertisement from Instagram post is greater than the proportion of users who click on the advertisement from Instagram story placement*
+
+
+#### Changing the Advertisement Format
+
+```{r, echo = FALSE}
+knitr::include_graphics("Hypothesis 2.png")
+```
+
+**Parameters to Compare: **
+
+Pc2 = The proportion of users who click on the current video advertisement on Instagram post 
+
+Pt2 = The proportion of users who click on the static image advertisement on Instagram post
+
+**Null Hypothesis**
+
+H0:  Pt2  - Pc2 ≤ 0
+
+*The proportion of users who click on the static image advertisement is not greater than the proportion of users who click on the current video advertisement on instagram post*
+
+**Alternative Hypothesis**
+
+H1: Pt2  - Pc2 > 0 
+
+*The proportion of users who click on the static image advertisement is greater than the proportion of users who click on the current video advertisement on instagram post*
+
+
+#### Adding Content by Stating the Benefit
+
+```{r, echo = FALSE}
+knitr::include_graphics("Hypothesis 3.png")
+```
+
+**Parameters to Compare: **
+
+Pc3 = The proportion of users who click on the static image advertisement with the brand promise on Instagram post 
+
+Pt3 = The proportion of users who click on the static image advertisement which includes the benefit on Instagram post 
+
+**Null Hypothesis**
+
+H0:  Pt3  - Pc3 ≤ 0
+
+*The proportion of users who click on the static image advertisement which includes the benefit is not greater than the proportion of users who click on the static image advertisement with the brand promise on instagram post*
+
+**Alternative Hypothesis**
+
+H1: Pt3  - Pc3 > 0 
+
+*The proportion of users who click on the static image advertisement which includes the app’s benefit is greater than the proportion of users who click on the static image advertisement with the brand promise on instagram post*
+
+Our hypotheses state that changing the advertising placement (story vs post), format (video vs static image), and content (original tagline vs including benefit) will increase the proportion of users who click on the advertisement. According to [Grayson Kemper (2022, Apr 6)](https://clutch.co/seo-firms/resources/search-engine-marketing-why-people-click-paid-search-ads), about 15% of people are likely to click on video ads, which is Hinge’s current advertisement format. With that, we think that a 5% increase in the proportion of users who click on the revised advertisement will constitute a meaningful effect.
+
+***
+
+### Importance of the Study
+
+Prior to the launch of the follow-up campaign on Instagram, it is essential to decide the most appropriate advertisement format, content, and placement on the platform that will elicit positive responses from Instagram users since it is costly to do a full-scale advertising campaign. Hence, the marketing department aims to run experiments to measure the effectiveness of the proposed changes before implementation. The metric used in this experiment is the proportion of users who click on the advertisement.
+
+***
+
+### Research Plan
+
+#### Population of Interest
+
+The population of interest in this study is Instagram users in the United States, aged 18 and above, regardless of their gender, race, or relationship status. According to ([Statista](https://www.statista.com/statistics/276689/leading-smartphone-activities-us-users-by-age-group/)), there are about 160 million Instagram users in the United States and 92.8% of them are above 18 years old. This will be our population of interest.
+
+#### Sample Selection
+
+For this study, due to limited resources, we are going to use simple random sampling to select Instagram users in the United States. It has a demographically diverse population with high internet and social media penetration. We believe that drawing individuals at random with an equal chance of selection can better represent our population of interest.
+
+In this study, we are going to utilize Instagram advertisement manager to run the campaign, where we can specify the characteristics of users that we want to target. However, since we are conducting random sampling, we are not going to specify any user characteristics. After analyzing the data with a sample of the United States, we can expand our research globally if needed.
+
+#### Operational Procedures
+
+The study will be conducted using Instagram’s split testing feature, which will allow us to test 2 different advertisements and see which one yields a higher proportion of users who click on the advertisements. There are 3 hypotheses within this study, shown in the table below:
+
+**Table 1.Hypothesis Testing Matrix**
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("Table 1.jpeg")
+```
+
+In each hypothesis, we are going to have a control and treatment group. For this simulation, we are having 6 samples (3 control groups and 3 treatment groups). In the actual experiment, we only need 4 samples as two of the treatment groups also act as control groups in the hypotheses. For instance, in Hypothesis 1, we are going to compare the placement of the advertisement, whereby the control group will be exposed to the advertisement placed as an Instagram story and the treatment group will be exposed to the advertisement placed as an Instagram post. In Hypothesis 2, the control group that will be exposed to the advertisement placed as an Instagram post is also the treatment group in Hypothesis 1. Having just 4 samples will save the company money and time. 
+
+We will use simple random sampling to select the users until we fulfill our sample size. The selected user in the particular group will be exposed to the same advertisement repeatedly. We are going to run the advertisement daily from Monday to Saturday, 3 times per day for 2 weeks. So, the maximum number of impressions is 36 per user (12 days x 3 times). The advertisement schedule is determined based on the research by [Digital Marketing Institute](www.digitalmarketinginstitute.com/blog/the-best-days-and-times-to-post-on-Instagram) on the best time to engage with Instagram users. There will be no advertisement running on Sunday because online users are least engaged during that day. To ensure the robustness of our experiment, each user will only be shown one type of advertisement and will not be exposed to the opposing advertisements. 
+
+#### Brief Schedule
+
+There are 7 stages to conduct our research, which takes an estimated 10 weeks to complete. The detailed schedule is shown below.
+
+**Table 2. Schedule of the Study**
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("Table 2.jpeg")
+```
+
+#### Data Collection
+
+Data will be collected through Instagram Insights, which is Instagram’s advertisement analytics platform. A metric report will be sent to Hinge for further analysis. The metric will contain demographic information such as age and gender, as well as performance metrics, such as number of views and the proportion of users who click, like and/or share, which measures users’ engagement to each advertisement type. 
+
+#### Data Security
+
+To protect the privacy and identity of users who are sampled in this experiment, identification variables, such as username and user ID will not be shared with Hinge (i.e. users are anonymised and serialized by number) even though Instagram has their details. With regards to consent, we are not going to collect a separate consent from each user for this experiment. This is because the experiment is in the form of an A/B testing, which is already a feature of Instagram and is available for use by all Instagram business accounts. For security purposes, the data file will be encrypted and can only be accessed by selected employees only. The data is used for this study only and not other purposes.
+
+#### Variables
+
+##### Outcomes (Dependent Variables)
+
+The dependent variable in this study is the proportion of users who click on the advertisement. We are going to compare the proportion of users of each group in a two sample proportion test to see if there are any significant differences.
+
+##### Treatments (Independent Variables)
+
+The independent variable in this study is the Instagram advertisement which is being manipulated or modified, in terms of placement, format and content. As mentioned in the previous section, the first hypothesis will compare placement of advertisements in Instagram story vs Instagram post, the second hypothesis will compare format of advertisements in video vs a static image in an Instagram post, and the third hypothesis will compare the content of an static image advertisement which shows only the brand promise vs one with an added benefit in an Instagram post.
+
+##### Other Variables
+
+Aside from the proportion of users who click, there are other related variables that we will track in this study. To track user engagement, we are going to record observations on the number of times a user viewed the advertisement, whether the user likes the advertisement and shares the advertisement. The maximum number of views is 36 because we are going to show the advertisement  3 times per day for 12 days (2 weeks excluding Sundays). For the like and share, they will be recorded as binary variables to determine whether a user liked and/or shared the advertisement (1) or not (0). For each of the groups, we can calculate the like rate and share rate, which is the number of users who liked and/or shared the advertisement out of the total number of users in the group.
+
+To assess the most effective day and hour to run the advertisements, we are going to record the day and time when a user clicks on the advertisements. The day clicked and hour clicked variables are going to be categorical nominal variables. We are going to record some demographic information about our sample size as well, such as age and gender. For age, we are going to create 6 categorical levels which are below 21, 21- 30, 31-40, 41-50, 51-60 and above 60. Whereas for gender, we are going to use binary variables, whereby 0 is Female and 1 is Male. 
+
+Even though our ultimate goal is to determine if the proportion of users who clicks on the advertisement in the treatment group is larger than that of the control group, we will be able to generate additional insight from the other metrics above, such as like and share rate, optimal times to run the advertisement as well as the most effective day and time to engage with users. These findings may improve our future campaigns or pave the way for further research.
+
+##### Variable Definition
+
+**Table 3. Variable Definition **
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("Table 3.jpeg")
+```
+
+***
+
+### Statistical Analysis Plan  
+
+To analyze the data in this study, we are going to conduct a two sample proportion test for each hypothesis. We choose to use this statistical analysis method because the parameter we are comparing is the proportion of users who click on the advertisements, hence the proportion test is the appropriate statistical test. For each hypothesis, we are going to have a treatment and control group, which translates to two samples. The hypothesized effect size will be the difference in the proportion of users who click on the advertisements in the treatment and control groups.
+
+Aside from the main analysis, we are going to conduct additional analysis for the supplementary variables. To analyze the like rate and share rate, we are going to use a two-sample proportion test for each of the hypotheses. The analysis will be similar to how we conduct our main analysis on the proportion of users who clicked on the advertisement. Whereas for day, hour and views variables, we are going to use ANOVA. We are going to compare the mean outcome for each of these variables across the 6 groups. By doing this, we will be able to know the optimum timing where users are more engaged and how many views should we expose our audience to.
+
+***
+
+### Sample Size and Statistical Power
+
+To calculate the minimum sample size requirement for this study, we use R’s pwr.p.test function. The assumptions that we made are a significance level of 0.05 and a statistical power of 0.8, both of which are the common rule of thumb when conducting experiments. The effect size that we set is a difference in proportion by 5% (control group has a proportion of 15% and the test group has a proportion of 20%). We have justified this effect size in the previous section and based it on the industry standard. We set the alternative hypothesis as greater since we are looking for whether the test group has a better result than the control group. Based on the parameters inputted in the R code, the minimum sample size for this study works out to be about 2,500 in each group. This is justifiable in consideration of the population size (number of instagram users in the USA, 166 million), the available budget and to achieve higher power for the study.
+
+We will conduct 1,000 simulations to test the power of the experiment. After the actual experiment, if the effect of a change is found to be both significant and meaningful, Hinge can make the change accordingly on the advertisement before pushing out a full-fledged campaign.
+
+***
+
+### Possible Recommendations
+  
+For hypothesis 1, if the statistical test is significant (null hypothesis is rejected), we will recommend the company to change the advertisement placement from an Instagram video story to an Instagram video post. However, if the statistical test is not significant (null hypothesis is not rejected), we will recommend the company to keep its current advertisement placement, which is in Instagram story.
+
+For hypothesis 2, if the statistical test is significant (null hypothesis is rejected), we will recommend the company to change the format of the advertisement from a video post to a static image post.  However, if the statistical test is not significant (null hypothesis is not rejected), we will recommend the company to keep its current advertisement format, which is video post.
+
+For hypothesis 3, if the statistical test is significant (null hypothesis is rejected), we will recommend the company to add the benefit of Hinge app to the static Instagram post. However, if the statistical test is not significant (null hypothesis is not rejected), we will recommend the company to retain its brand promise in the advertisement.
+
+***
+
+### Limitations and Uncertainties
+
+The study has several limitations. First, the sample selection is based on simple random sampling. We do not know whether or not the selected Instagram users had already downloaded the Hinge app. If the Instagram users have the Hinge app, they will not click the advertisement even if it attracted them since they already had it. In this case, the proportion of users who click on the advertisement may be understated and could not fully reflect the effectiveness of our advertisement. Second, the study modified the original Hinge advertisement image to test whether there are significant effects on position (top or middle of the page), presentation type (video or post), and content (brand or benefit). The Instagram users selected for the study who had seen the original advertisement might not pay attention or ignore the latest test advertisements. Third, the study is not able to exclude users who do not have the intention to date or find a partner. Users who are in a relationship are unlikely to click on the advertisement because they do not need a dating app. Although the three limitations mentioned above will lead to underestimating the effect of the control and treatment groups, it will not change the study result since we are looking for relativity between the groups. 
+
+Additionally, we only use the proportion of users who click as a metric for the A/B testing because of the limitation of Instagram. Our final goal is to investigate and improve the click-to-install (CTI) rate of the advertisement campaigns. This is in consideration that even if a user clicks on the advertisement, he/she may not download the app. Hence, our measurement cannot fully represent the actual result which Hinge is interested in, i.e. the number of new members attributable to the advertisement campaign. Further, our study and follow-up campaign will only be conducted on Instagram users in the USA. The test outcome might be different on other platforms such as Facebook, TikTok, and other social media as well as in the other countries due to the characteristics of the users and features of the platforms. If there is an intention to use the modified advertisement on the other platforms or in other countries, testing will be required prior to implementation.  
+
+***
+
+## Part 2:  Simulated Studies
+
+For this research proposal, we conducted 1,000 simulated studies with 2 scenarios - without effect and with effect. First, we created a data set using the R rbinom() function. Then we ran the experiment once using the analyze.experiment() function to assess its distribution and p value. Since we are comparing proportions across 2 groups, we used the prop.test() function within the analyze.experiment() function to test our hypothesis. Thereafter, we conducted the simulations 1,000 times and analyzed the effects by calculating the false positive, false negative, true negative, false positive, p-value, mean effect and confidence interval. We repeated the same procedure for the other two hypotheses. 
+
+In the without  effect scenario, we assumed that the proportion of users who click in the control and treatment groups are the same. Hence, we use the same probability for both groups in our simulations. Whereas in the with effect scenario, we assumed that the proportion of users who click in the control and treatment group are different by 5%. This is in line with the effect size that we expect due to the treatment. 
+
+The results are shown in the table below: 
+
+**Table 4. Matrix of Result in 1000 Simulated Studies With and Without Effect**
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("Table 3.png")
+```
+
+### Research Question 1: Advertisement Placement
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+
+
+```{r}
+#Hypothesis1: Placement 
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+set.seed(seed = 329)
+
+#Testing Dataset
+n <- 5000
+bp.dat <- data.table(Group = c(rep.int(x="Video_Story", times = n/2), 
+                               rep.int(x = "Video_Post", times = n/2)))
+
+bp.dat[Group == "Video_Story", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+bp.dat[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+
+# data=datatable(data = bp.dat)
+data = bp.dat %>%
+  group_by(Group) %>%
+  summarise(count0 = sum(click == 0), 
+            count1 = sum(click ==1))
+
+#Analyze Function
+analyze.experiment <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data$count1[1], data$count1[2]),
+                        n = c(1000, 1000))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+analyze.experiment(the.dat = data)
+
+##Repeating 1,000 scenarios
+B <- 1000
+n <- 5000
+set.seed(seed = 4172)
+Experiment <- 1:B
+
+#Create dataset
+Group <- c(rep.int(x="Video_Story", times = n/2), 
+             rep.int(x = "Video_Post", times = n/2))
+sim.dat <- as.data.table(expand.grid(Experiment = Experiment, Group = Group))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Simulation
+for (i in 1:1000) {
+  bp.dat <- data.table(Group <- c(rep.int(x="Video_Story", times = n/2), 
+                                    rep.int(x = "Video_Post", times = n/2)))
+  bp.dat[Group == "Video_Story", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  data = bp.dat %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment(the.dat = data)
+}
+exp.results <- cbind(sim.dat, p.test)
+DT::datatable(data = round(x = exp.results[1:1000, -2],
+                           digits = 3), rownames = F)
+```
+
+##### Analysis
+
+```{r}
+# Percentage of False positive
+exp.results[, mean(p < 0.05)]
+
+# Percentage of True negative
+1 - exp.results[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results[, summary(lower_ci)]
+```
+For the without effect scenario, the simulation suggests that there is no significant difference in the proportion of users who click the advertisement for Instagram Post (Pt1) and the Instagram Story (Pc1). The mean effect is 0.0981% with confidence intervals indicating that the real effect size is likely to fall between -4.24% and 4.44%. The false positives is 9%, and the true negatives is 91%. With a p-value of 0.48, there is not enough evidence to reject the null hypothesis. It suggests that there is no difference in the proportion of users who click on the advertisement when changes were made to advertisement placement. Hence, the without effect scenario suggested that Hinge should not make any changes to the current advertisement placement, which is Instagram Story. 
+
+#### Scenario 2:  An Expected Effect
+
+##### Simulation
+
+```{r}
+#Hypothesis1: Placement 
+##Repeating 1,000 scenarios
+
+B <- 1000
+n <- 5000
+set.seed(seed = 1031)
+Experiment <- 1:B
+
+#Create dataset
+
+Group <- c(rep.int(x="Video_Post", times = n/2), 
+           rep.int(x = "Video_Story", times = n/2))
+
+sim.dat <- as.data.table(expand.grid(Experiment = Experiment, Group = Group))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Analyze Function
+
+analyze.experiment <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data$count1[1], data$count1[2]),
+                        n = c(2500, 2500))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+
+analyze.experiment(the.dat = data)
+
+#Simulation
+
+for (i in 1:1000) {
+  bp.dat <- data.table(Group <- c(rep.int(x="Video_Post", times = n/2), 
+                                  rep.int(x = "Video_Story", times = n/2)))
+  bp.dat[Group == "Video_Story", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.20))]
+  data = bp.dat %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment(the.dat = data)
+}
+
+exp.results <- cbind(sim.dat, p.test)
+
+DT::datatable(data = round(x = exp.results[1:1000, -2],
+                           digits = 3), rownames = F)
+
+```
+
+##### Analysis
+
+```{r}
+# Percentage of True positive
+exp.results[, mean(p < 0.05)]
+
+# Percentage of False negative
+1 - exp.results[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results[, summary(lower_ci)]
+```
+
+For the advertisement placement, the simulation demonstrates a significant increase in the proportion of users who click the advertisement in Instagram Post (Pt1) compared to the Instagram Story (Pc1), with the mean effect of 5%. The confidence intervals show that the true effect size is likely to be between 2.87% and 7.15%. The probability of incorrectly accepting the null hypothesis is 0.2%, and the probability of accepting it when it is true is 99.8%. The null hypothesis stated that the proportion of users who click on the advertisement from Instagram post is not greater than that of Instagram story placement. With a p-value of 0.0008, there is enough evidence to reject the null hypothesis. Since the p-value is significant and the effect size is meaningful, we recommend that Hinge should switch their advertisement placement from Instagram Story to Instagram Post.
+
+### Research Question 2: Advertisement Format
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+
+```{r}
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+
+bp.dat2 <- data.table(Group <- c(rep.int(x="Video_Post", times = n/2), 
+                                   rep.int(x = "Static_Post_Tagline", times = n/2)))
+  bp.dat2[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat2[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  data2 = bp.dat2 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+
+#Analyze Function
+
+analyze.experiment2 <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data2$count1[1], data2$count1[2]),
+                        n = c(2500, 2500))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+
+analyze.experiment2(the.dat = data2)
+
+##Repeating 1,000 scenarios
+
+B <- 1000
+n <- 5000
+set.seed(seed = 4172)
+Experiment <- 1:B
+
+#Create dataset
+
+Group2 <- c(rep.int(x="Video_Post", times = n/2), 
+            rep.int(x = "Static_Post_Tagline", times = n/2))
+
+sim.dat2 <- as.data.table(expand.grid(Experiment = Experiment, Group = Group2))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Simulation
+
+for (i in 1:1000) {
+  bp.dat2 <- data.table(Group <- c(rep.int(x="Video_Post", times = n/2), 
+                                   rep.int(x = "Static_Post_Tagline", times = n/2)))
+  bp.dat2[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat2[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  data2 = bp.dat2 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment2(the.dat = data2)
+}
+
+exp.results2 <- cbind(sim.dat2, p.test)
+
+DT::datatable(data = round(x = exp.results2[1:1000, -2],
+                           digits = 3), rownames = F)
+
+```
+
+##### Analysis
+
+```{r}
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+# Percentage of False positive
+exp.results2[, mean(p < 0.05)]
+
+# Percentage of True negative
+1 - exp.results2[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results2[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results2[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results2[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results2[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results2[, summary(lower_ci)]
+
+```
+
+The simulation for no effect scenario indicates that there is no significant difference in the proportion of users who click the advertisement in static image format (Pt2) compared to the video format (Pc2). The mean effect size is 0.0981% , with a confidence interval between -4.24% and 4.44%. The false positives is 9%, and the true negatives is 91%. These results infer that no effect on the proportion would occur when changes were made to advertisement format, as indicated by the p-value of 0.48. Thus, the no effect scenario recommended that Hinge should not make any adjustments to the current advertisement format, which is video.
+
+#### Scenario 2:  An Expected Effect
+
+##### Simulation
+
+```{r}
+##Repeating 1,000 scenarios
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+B <- 1000
+n <- 5000
+set.seed(seed = 4172)
+Experiment <- 1:B
+
+#Create dataset
+Group2 <- c(rep.int(x="Video_Post", times = n/2), 
+            rep.int(x = "Static_Post_Tagline", times = n/2))
+
+sim.dat2 <- as.data.table(expand.grid(Experiment = Experiment, Group = Group2))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Analyze Function
+analyze.experiment2 <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data2$count1[1], data2$count1[2]),
+                        n = c(2500, 2500))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+
+analyze.experiment2(the.dat = data2)
+
+#Simulation
+for (i in 1:1000) {
+  bp.dat2 <- data.table(Group <- c(rep.int(x="Video_Post", times = n/2), 
+                                   rep.int(x = "Static_Post_Tagline", times = n/2)))
+  bp.dat2[Group == "Video_Post", click := (x = rbinom(n = 2500, size =1, prob=0.20))]
+  bp.dat2[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.25))]
+  data2 = bp.dat2 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment2(the.dat = data2)
+}
+exp.results2 <- cbind(sim.dat2, p.test)
+DT::datatable(data = round(x = exp.results2[1:1000, -2],
+                           digits = 3), rownames = F)
+```
+
+##### Analysis
+
+```{r}
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+# Percentage of True positive
+exp.results2[, mean(p < 0.05)]
+
+# Percentage of False negative
+1 - exp.results2[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results2[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results2[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results2[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results2[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results2[, summary(lower_ci)]
+```
+
+On the advertising format, the simulation reveals a significant increase in the proportion of users who click the advertisement in static image format (Pt2) compared to the video format (Pc2), which is reflected by the mean effect of 5%. The confidence interval indicates that the real effect size is likely to fall between 2.66% and 7.36%. The probability of incorrectly accepting the null hypothesis is 1.1%, and the probability of accepting it when it is true is 98.9%. With a p-value of 0.0029606, there is enough evidence to reject the null hypothesis. Since the p-value is significant and the effect size is meaningful, we suggest that Hinge should change their advertisement format from video to static image.
+
+### Research Question 3: Advertisement Content
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+
+```{r}
+##Repeating 1,000 scenarios
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+
+n <- 5000
+bp.dat3 <- data.table(Group <- c(rep.int(x="Static_Post_Tagline", times = n/2), 
+                                   rep.int(x = "Static_Post_Benefit", times = n/2)))
+  bp.dat3[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat3[Group == "Static_Post_Benefit", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  data3 = bp.dat3 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+
+#Analyze Function
+
+analyze.experiment3 <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data3$count1[1], data3$count1[2]),
+                        n = c(2500, 2500))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+
+analyze.experiment3(the.dat = data3)
+
+#1000 Simulations
+B <- 1000
+set.seed(seed = 4172)
+Experiment <- 1:B
+
+#Create dataset
+
+Group3 <- c(rep.int(x="Static_Post_Tagline", times = n/2), 
+            rep.int(x = "Static_Post_Benefit", times = n/2))
+
+sim.dat3 <- as.data.table(expand.grid(Experiment = Experiment, Group = Group3))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Simulation
+
+for (i in 1:1000) {
+  bp.dat3 <- data.table(Group <- c(rep.int(x="Static_Post_Tagline", times = n/2), 
+                                   rep.int(x = "Static_Post_Benefit", times = n/2)))
+  bp.dat3[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  bp.dat3[Group == "Static_Post_Benefit", click := (x = rbinom(n = 2500, size =1, prob=0.15))]
+  data3 = bp.dat3 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment3(the.dat = data3)
+}
+
+exp.results3 <- cbind(sim.dat3, p.test)
+
+DT::datatable(data = round(x = exp.results3[1:1000, -2],
+                           digits = 3), rownames = F)
+
+```
+
+##### Analysis
+
+```{r}
+# Percentage of False positive
+exp.results3[, mean(p < 0.05)]
+
+# Percentage of True negative
+1 - exp.results3[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results3[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results3[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results3[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results3[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results3[, summary(lower_ci)]
+```
+
+The simulation showed that Pt3 (benefit attribute) and Pc3 (branding tagline) had no significant difference in the proportion of users clicking the advertisement. The effect size was 0.0981%, with a confidence interval of -4.24% to 4.44%. The false positives is 9%, and the true negatives is 91%. Given the p-value of 0.48, the no effect scenario recommended that the advertisement content should stay the same, with current branding tagline, and no adjustments should be made.
+
+#### Scenario 2:  An Expected Effect
+
+```{r}
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+##Repeating 1,000 scenarios
+B <- 1000
+n <- 5000
+set.seed(seed = 4172)
+Experiment <- 1:B
+
+#Create dataset
+Group3 <- c(rep.int(x="Static_Post_Tagline", times = n/2), 
+            rep.int(x = "Static_Post_Benefit", times = n/2))
+
+sim.dat3 <- as.data.table(expand.grid(Experiment = Experiment, Group = Group3))
+
+#Construct p.test
+p.test <- data.frame(effect = rep(NA, 1000), upper_ci = rep(NA,1000), lower_ci = rep(NA, 1000), p = rep(NA, 1000))
+
+#Analyze Function
+analyze.experiment3 <- function(the.dat) {
+  require(data.table)
+  setDT(the.dat)
+  the.test <- prop.test(x = c(data3$count1[1], data3$count1[2]),
+                        n = c(2500, 2500))
+  the.effect <- the.test$estimate[1] - the.test$estimate[2]
+  upper.bound <- the.test$conf.int[2]
+  lower.bound <- the.test$conf.int[1]
+  p <- the.test$p.value
+  result <- data.table(effect = the.effect, upper_ci = upper.bound,
+                       lower_ci = lower.bound, p = p)
+  return(result)
+}
+analyze.experiment3(the.dat = data3)
+
+#Simulation
+for (i in 1:1000) {
+  bp.dat3 <- data.table(Group <- c(rep.int(x="Static_Post_Tagline", times = n/2), 
+                                   rep.int(x = "Static_Post_Benefit", times = n/2)))
+  bp.dat3[Group == "Static_Post_Tagline", click := (x = rbinom(n = 2500, size =1, prob=0.25))]
+  bp.dat3[Group == "Static_Post_Benefit", click := (x = rbinom(n = 2500, size =1, prob=0.30))]
+  data3 = bp.dat3 %>%
+    group_by(V1) %>%
+    summarise(count0 = sum(click == 0), 
+              count1 = sum(click == 1))
+  
+  p.test[i, ] <- analyze.experiment3(the.dat = data3)
+}
+exp.results3 <- cbind(sim.dat3, p.test)
+DT::datatable(data = round(x = exp.results3[1:1000, -2],
+                           digits = 3), rownames = F)
+
+```
+
+###Analysis
+```{r}
+library(rmarkdown)
+library(data.table)
+library(DT)
+library(dplyr)
+# Percentage of True positive
+exp.results3[, mean(p < 0.05)]
+
+# Percentage of False negative
+1 - exp.results3[, mean(p < 0.05)]
+
+# Summary of P-Value
+exp.results3[, summary(p)]
+
+# Summary of difference for prop-test
+exp.results3[, summary(effect)]
+
+# Mean effect of the simulated data
+exp.results3[, mean(effect)]
+
+# Summary of upper confidence interval of mean effect
+exp.results3[, summary(upper_ci)]
+
+# Summary of lower confidence interval of mean effect
+exp.results3[, summary(lower_ci)]
+```
+The simulation of the advertisement content implies a significant improvement in the proportion of users who click on the static image advertisement with the benefit attribute (Pt3) compared to the current branding tagline (Pc3). The mean effect is 5% and the confidence intervals likely to be between 2.49% and 7.51%. The probability of incorrectly accepting the null hypothesis is 2.8%, and the probability of accepting it when it is true is 97.2%. With a p-value of 0.0059726, there is enough evidence to reject the null hypothesis. Since the p-value is significant and the effect size is meaningful, we suggest that Hinge modify their advertisement content to state the benefit attribute on top of its current branding.
+
+***
+
+## Appendix
+
+**Table 5. Responsibility of Research**
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("Responsibility.jpeg")
+```
+
+***
+
+## References
+
+Alalwan, A. A. (2018, October). Investigating the impact of social media advertising features on customer purchase intention. Retrieved October 19, 2022, from https://doi.org/10.1016/j.ijinfomgt.2018.06.001
+
+Digital Marketing Institute. (2022, July 28). Best Times to Post on Instagram. Digital Marketing Institute. Retrieved October 19, 2022, from https://digitalmarketinginstitute.com/blog/the-best-days-and-times-to-post-on-Instagram
+
+Goodrich, K., Schiller, S., & Galletta, D. (n.d.). Consumer reactions to intrusiveness of online-video advertisements: Do ... ResearchGate. Retrieved December 7, 2022, from https://www.researchgate.net/publication/273673847_Consumer_Reactions_to_Intrusiveness_Of_Online-Video_Advertisements_Do_Length_Informativeness_and_Humor_Help_or_Hinder_Marketing_Outcomes 
+
+Grayson Kemper (2022, Apr 6) Search engine marketing: Why people click on paid search ads. (n.d.). Retrieved November 30, 2022, from https://clutch.co/seo-firms/resources/search-engine-marketing-why-people-click-paid-search-ads 
+
+Hinge campaign by Red Antler. Hinge "Designed To Be Deleted". (n.d.). Retrieved October 19, 2022, from https://redantler.com/work/case-study/hinge-campaign
+
+Kusumasondjaja, S. (2019, September 20). Exploring the role of visual aesthetics and presentation modality in luxury fashion brand communication on Instagram. Journal of Fashion Marketing and Management: An International Journal. Retrieved November 10, 2022, from https://doi.org/10.1108/JFMM-02-2019-0019 
+
+L. Ceci, & 22, S. (2022, September 22). U.S. top weekly smartphone activities for Millennials 2021. Statista. Retrieved October 19, 2022, from https://www.statista.com/statistics/276689/leading-smartphone-activities-us-users-by-age-group/
+
+Lichtlé, M.-C. (n.d.). The effect of an advertisement’s colour on emotions evoked by attitude towards the ad. Retrieved November 16, 2022, from https://www.tandfonline.com/doi/abs/10.1080/02650487.2007.11072995
+
+Match Group Letter to Shareholder Q2 2022. (n.d.). Retrieved October 19, 2022, from https://s22.q4cdn.com/279430125/files/doc_financials/2022/q2/Earnings-Letter-Q2-2022-vF.pdf 
+
+Match Group, inc.. report for the fiscal year ended December 31, 2021. (n.d.). Retrieved October 19, 2022, from https://s22.q4cdn.com/279430125/files/doc_financials/2020/ar/Match-Group-2021-Annual-Report-to-Stockholders_vF.pdf 
+
+Mattke, J., Maier, C., Reis, L., & Weitzel, T. (2021, April 8). In-app advertising: A two-step qualitative comparative analysis to explain clicking behavior. European Journal of Marketing. Retrieved October 19, 2022, from https://doi.org/10.1108/EJM-03-2020-0210
+
+Millennials. Statista. (n.d.). Retrieved October 19, 2022, from https://www.statista.com/topics/2705/millennials-in-the-us/
+
+Northcott, Celine, et al. "Should Facebook advertisements promoting a physical activity smartphone app be image or video-based, and should they promote benefits of being active or the app attributes?" Translational Behavioral Medicine, vol. 11, no. 12, Dec. 2021, pp. 2136+. Gale Academic OneFile, from https://link.gale.com/apps/doc/A700297496/AONE?u=columbiau&sid=summon&xid=1eeb78b5.
+
+Online dating - united states: Statista market forecast. Statista. (n.d.). Retrieved October 19, 2022, from https://www.statista.com/outlook/dmo/eservices/dating-services/online-dating/united-states 
+
+Sałabun, W., Karczmarczyk, A., Mejsner, P. (2017). Experimental Study of Color Contrast Influence in Internet Advertisements with Eye Tracker Usage. In: Nermend, K., Łatuszyńska, M. (eds) Neuroeconomic and Behavioral Aspects of Decision Making. Springer Proceedings in Business and Economics. Springer, Cham. https://doi-org.ezproxy.cul.columbia.edu/10.1007/978-3-319-62938-4_24
+
+S. Dixon, & 13, J. (2022, July 13). Dating apps: Most downloaded in the U.S. 2022. Statista. Retrieved October 19, 2022, from https://www.statista.com/statistics/1238390/most-popular-dating-apps-us-by-number-of-downloads/
+
+S. Dixon, & 27, J. (2022, July 27). U.S. Instagram users by age group 2022. Statista. Retrieved October 19, 2022, from https://www.statista.com/statistics/398166/us-Instagram-user-age-distribution/ 
+
+Smith, K. T. (2011, September 30). Digital marketing strategies that millennials find appealing, motivating, or just annoying. Taylor & Francis. Retrieved October 19, 2022, from https://www.tandfonline.com/doi/full/10.1080/0965254X.2011.581383 
+
+Zhang, J., & Mao, E. (2016, March). From online motivations to ad clicks and to behavioral intentions: An Empirical Study of Consumer Response to Social Media Advertising. Retrieved October 19, 2022, from https://onlinelibrary.wiley.com/doi/10.1002/mar.20862
+
